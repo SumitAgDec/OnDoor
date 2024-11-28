@@ -11,6 +11,7 @@ import {
 import AddProducts from "./components/AddProducts/AddProducts.jsx";
 import Home from "./components/Home/Home.jsx";
 import ViewProduct from "./components/ViewProduct/ViewProduct.jsx";
+import Orders from "./components/Orders/Orders.jsx";
 
 // Define your routes
 const router = createBrowserRouter(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="add-products" element={<AddProducts />} />
       <Route path="view-products" element={<ViewProduct />} />
+      <Route path="orders" element={<Orders />} />
     </Route>
   )
 );
