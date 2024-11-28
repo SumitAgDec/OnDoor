@@ -24,7 +24,9 @@ Node.js (Runtime environment)
 Express (Web framework)
 MongoDB (Database)
 JWT (Authentication)
+
 ⚙️ Installation & Setup
+
 Prerequisites:
 Node.js installed
 MongoDB set up locally or a cloud instance
