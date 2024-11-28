@@ -33,6 +33,12 @@ const addProducts = async (req, res) => {
     })
 }
 
+const getProduct = async (req, res) => {
+    const data = await Product.find({})
+    return res.status(200).send(data)
+}
+
 module.exports = {
-    addProducts
+    addProducts,
+    getProduct
 }
