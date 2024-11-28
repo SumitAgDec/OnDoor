@@ -6,6 +6,7 @@ function Card({
   price = "0",
   productImage,
   productType = "Not Defined",
+  productDescription,
 }) {
   return (
     <div>
@@ -30,6 +31,7 @@ function Card({
                     price,
                     productImage,
                     productType,
+                    productDescription,
                   }}
                 >
                   View Product

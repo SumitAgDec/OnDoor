@@ -30,6 +30,7 @@ function Home() {
               price={item.price}
               productImage={item.productImage}
               productType={item.productType}
+              productDescription={item.productDescription}
             />
           ))}
         </div>
