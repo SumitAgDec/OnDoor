@@ -1,10 +1,12 @@
 require('dotenv').config()
 const express = require('express')
 const { connectToDB } = require('./db/connectDB')
-const productRoute = require('./routes/product.router')
-const paymentRoute = require('./routes/payments.router')
 const bodyParser = require("body-parser");
 const path = require('path')
+
+const productRoute = require('./routes/product.router')
+const paymentRoute = require('./routes/payments.router')
+const userRoute = require('./routes/user.router')
 
 const app = express()
 
@@ -22,6 +24,7 @@ app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 // Routes
 app.use('/api', productRoute)
 app.use('/', paymentRoute)
+app.use('/auth', userRoute)
 
 
 app.listen(port, () => console.log(`http://localhost:${port}`))
