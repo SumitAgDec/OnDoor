@@ -1,5 +1,6 @@
 const User = require("../models/users.model")
 const bcrypt = require('bcrypt')
+const { createToken } = require("../services/auth.service")
 
 const createUser = async (req, res) => {
     const { fullName, email, password, userProfile, userType } = req.body
@@ -11,11 +12,13 @@ const createUser = async (req, res) => {
             fullName,
             email,
             password: hashPassword,
-            userProfile,
+            userProfile: `/userProfile/${req.file.filename}`,
             userType
         })
 
         if (user) {
+            const token = createToken(user)
+            res.cookie("token", token)
             return res.status(201).json({
                 success: true,
                 message: "New user connected"
@@ -37,16 +40,22 @@ const verifyUser = async (req, res) => {
     try {
         const user = await User.findOne({ email })
 
-        if (!user) return res.json({ message: "No user found" })
+        if (!user) return null
 
         const verifyPassword = await bcrypt.compare(password, user.password)
 
-        if (!verifyPassword) return res.json({ message: "Incorrect password" })
+        if (!verifyPassword) return null
 
-        return res.status(200).send({
-            success: true,
-            message: "User loggedin"
-        })
+        const token = createToken(user)
+
+        res.cookie("token", token)
+
+        return res.status(200).json({
+            email: user.email,
+            fullName: user.fullName,
+            userProfile: user.userProfile,
+            userType: user.userType
+        });
 
     } catch (error) {
         console.log("ERROR ", error)

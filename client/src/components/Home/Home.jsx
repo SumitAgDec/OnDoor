@@ -11,7 +11,6 @@ function Home() {
       try {
         const response = await axios.get("/api/get-products");
         setProducts(response.data);
-        console.log(response.data);
       } catch (error) {
         console.log("Error in fetchProduct: ", error);
       }
@@ -26,6 +25,7 @@ function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-7">
           {products.map((item) => (
             <Card
+              key={item._id}
               productName={item.productName}
               price={item.price}
               productImage={item.productImage}
