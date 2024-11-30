@@ -12,6 +12,15 @@ const paymentSchema = new Schema({
     razorpay_signature: {
         type: String,
         required: true
+    },
+    status: {
+        type: String,
+        enum: ["Shipped", "OnDelivery", "Delivered"],
+        default: "Shipped"
+    },
+    orderBy: {
+        type: Schema.Types.ObjectId,
+        ref: "User", // Reference to the User model
     }
 }, { timestamps: true })
 

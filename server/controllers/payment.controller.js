@@ -36,9 +36,12 @@ const paymentVerification = async (req, res) => {
         await Payment.create({
             razorpay_order_id,
             razorpay_payment_id,
-            razorpay_signature
+            razorpay_signature,
         })
-        return res.redirect(`http://localhost:5173/orders?reference=${razorpay_payment_id}`)
+        return res.status(200).json({
+            success: true,
+            message: 'Verify Payment'
+        })
     }
     else {
         return res.status(400).json({
@@ -46,12 +49,16 @@ const paymentVerification = async (req, res) => {
             message: "Payment Failed"
         })
     }
+}
 
-
+const orders = async (req, res) => {
+    const orders = await Payment.find({}).populate('orderBy', 'fullName email')
+    return res.json(orders)
 }
 
 module.exports = {
     makePayment,
     paymentKey,
-    paymentVerification
+    paymentVerification,
+    orders
 }
