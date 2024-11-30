@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 function ViewProduct() {
   const location = useLocation();
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
 
   const {
     productName,
@@ -11,6 +13,14 @@ function ViewProduct() {
     productType = "Not Defined",
     productDescription,
   } = location.state || {};
+
+  useEffect(() => {
+    const getData = JSON.parse(localStorage.getItem("user"));
+    const name = getData.fullName;
+    const email = getData.email;
+    setUserName(name);
+    setUserEmail(email);
+  }, []);
 
   const handlePayment = async (price) => {
     const {
@@ -32,8 +42,8 @@ function ViewProduct() {
       order_id: order.id,
       callback_url: "http://localhost:5001/api/paymentverification",
       prefill: {
-        name: "Gaurav Kumar",
-        email: "gaurav.kumar@example.com",
+        name: userName,
+        email: userEmail,
         contact: "9625781451",
       },
       notes: {

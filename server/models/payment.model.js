@@ -19,8 +19,7 @@ const paymentSchema = new Schema({
         default: "Shipped"
     },
     orderBy: {
-        type: Schema.Types.ObjectId,
-        ref: "User", // Reference to the User model
+        type: String
     }
 }, { timestamps: true })
 
