@@ -19,7 +19,7 @@ function Signup() {
     formData.append("password", password);
 
     try {
-      await axios.post("/auth/signup", formData, {
+      const response = await axios.post("/auth/signup", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -28,9 +28,10 @@ function Signup() {
       setFullName("");
       setEmail("");
       setPassword("");
-      console.log("User created successfully");
+      console.log(response.data);
       localStorage.setItem("user", JSON.stringify(response.data));
       navigate("/");
+      window.location.reload();
     } catch (error) {
       console.log("Error", error);
     }

@@ -9,6 +9,7 @@ const paymentRoute = require('./routes/payments.router')
 const userRoute = require('./routes/user.router')
 
 const app = express()
+// app.use(express.static(path.join(__dirname, 'public')))
 
 port = process.env.PORT
 

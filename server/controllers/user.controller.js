@@ -20,9 +20,11 @@ const createUser = async (req, res) => {
             const token = createToken(user)
             res.cookie("token", token)
             return res.status(201).json({
-                success: true,
-                message: "New user connected"
-            })
+                email: user.email,
+                fullName: user.fullName,
+                userProfile: user.userProfile,
+                userType: user.userType
+            });
         }
     } catch (error) {
         console.log("ERROR ", error)

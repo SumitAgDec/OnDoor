@@ -22,6 +22,7 @@ function Login() {
 
       localStorage.setItem("user", JSON.stringify(response.data));
       navigate("/");
+      window.location.reload();
     } catch (error) {
       console.error(
         "Error during login:",

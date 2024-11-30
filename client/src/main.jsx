@@ -14,6 +14,8 @@ import ViewProduct from "./components/ViewProduct/ViewProduct.jsx";
 import Orders from "./components/Orders/Orders.jsx";
 import Signup from "./components/Signup/Signup.jsx";
 import Login from "./components/Login/login.jsx";
+import Profile from "./components/Profile/Profile.jsx";
+import Categories from "./components/Categories/Categories.jsx";
 
 // Define your routes
 const router = createBrowserRouter(
@@ -22,6 +24,8 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="signup" element={<Signup />} />
       <Route path="login" element={<Login />} />
+      <Route path="profile" element={<Profile />} />
+      <Route path="categories" element={<Categories />} />
       <Route path="add-products" element={<AddProducts />} />
       <Route path="view-products" element={<ViewProduct />} />
       <Route path="orders" element={<Orders />} />
