@@ -56,9 +56,37 @@ const orders = async (req, res) => {
     return res.json(orders)
 }
 
+const updateOrderStatus = async (req, res) => {
+    const { id } = req.params;
+    const { status } = req.body;
+
+    if (!status) {
+        return res.status(400).json({ success: false, message: "Status is required" });
+    }
+
+    try {
+        const updatedOrder = await Payment.findByIdAndUpdate(
+            id,
+            { status },
+            { new: true }
+        );
+
+        if (!updatedOrder) {
+            return res.status(404).json({ success: false, message: "Order not found" });
+        }
+
+        res.status(200).json({ success: true, order: updatedOrder });
+    } catch (error) {
+        console.error("Error updating order:", error);
+        res.status(500).json({ success: false, message: "Internal Server Error" });
+    }
+};
+
+
 module.exports = {
     makePayment,
     paymentKey,
     paymentVerification,
-    orders
+    orders,
+    updateOrderStatus
 }

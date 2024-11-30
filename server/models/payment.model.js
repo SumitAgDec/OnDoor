@@ -15,7 +15,7 @@ const paymentSchema = new Schema({
     },
     status: {
         type: String,
-        enum: ["Shipped", "OnDelivery", "Delivered"],
+        enum: ["Shipped", "OnDelivery", "Delivered", "Pending"],
         default: "Shipped"
     },
     orderBy: {
