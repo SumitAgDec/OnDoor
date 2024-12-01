@@ -2,21 +2,19 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function Orders() {
-  const [orders, setOrders] = useState([]); // State for orders
+  const [orders, setOrders] = useState([]);
   const [statuses] = useState([
     "Pending",
     "Shipped",
     "On Delivery",
     "Delivered",
-  ]); // Status options
-
-  // Fetch orders from the backend
+  ]);
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await axios.get("/api/orders");
-        console.log("Response structure:", response.data); // Debug fetched data
-        setOrders(response.data); // Set orders in state
+        console.log("Response structure:", response.data);
+        setOrders(response.data);
       } catch (error) {
         console.error("Error fetching orders:", error);
       }
@@ -24,17 +22,14 @@ function Orders() {
     getData();
   }, []);
 
-  // Handle status update for a specific order
   const handleStatusChange = async (orderId, newStatus) => {
     try {
-      // Send a PUT request to update the order status
       const response = await axios.put(`/api/orders/${orderId}`, {
-        status: newStatus, // Pass the new status in the request body
+        status: newStatus,
       });
 
       console.log("Status updated:", response.data);
 
-      // Update the local orders state to reflect the change
       setOrders((prevOrders) =>
         prevOrders.map((order) =>
           order._id === orderId ? { ...order, status: newStatus } : order

@@ -5,6 +5,7 @@ function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [profile, setProfile] = useState(null);
   const [userData, setUserData] = useState("");
+  const [isAdmin, isSetAdmin] = useState("");
 
   const navigate = useNavigate();
 
@@ -13,6 +14,8 @@ function Header() {
     if (userData) {
       setUserData(userData);
       const profile = userData.userProfile;
+      const type = userData.userType;
+      isSetAdmin(type);
       setProfile(profile);
     } else {
       console.log("userData not found");
@@ -131,31 +134,61 @@ function Header() {
 
               {userData ? (
                 <>
-                  <li>
-                    <NavLink
-                      to="/add-products"
-                      className={({ isActive }) =>
-                        `block ${
-                          isActive ? "text-orange-700" : "text-gray-700"
-                        } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                      }
-                    >
-                      Add Products
-                    </NavLink>
-                  </li>
+                  {isAdmin === "ADMIN" ? (
+                    <>
+                      <li>
+                        <NavLink
+                          to="/add-products"
+                          className={({ isActive }) =>
+                            `block ${
+                              isActive ? "text-orange-700" : "text-gray-700"
+                            } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                          }
+                        >
+                          Add Products
+                        </NavLink>
+                      </li>
 
-                  <li>
-                    <NavLink
-                      to="/orders"
-                      className={({ isActive }) =>
-                        `block ${
-                          isActive ? "text-orange-700" : "text-gray-700"
-                        } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                      }
-                    >
-                      Orders
-                    </NavLink>
-                  </li>
+                      <li>
+                        <NavLink
+                          to="/orders"
+                          className={({ isActive }) =>
+                            `block ${
+                              isActive ? "text-orange-700" : "text-gray-700"
+                            } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                          }
+                        >
+                          Orders
+                        </NavLink>
+                      </li>
+
+                      <li>
+                        <NavLink
+                          to="/all-quarries"
+                          className={({ isActive }) =>
+                            `block ${
+                              isActive ? "text-orange-700" : "text-gray-700"
+                            } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                          }
+                        >
+                          All Quarries
+                        </NavLink>
+                      </li>
+                    </>
+                  ) : (
+                    <li>
+                      <NavLink
+                        to="/product-query"
+                        className={({ isActive }) =>
+                          `block ${
+                            isActive ? "text-orange-700" : "text-gray-700"
+                          } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                        }
+                      >
+                        Product Query
+                      </NavLink>
+                    </li>
+                  )}
                 </>
               ) : (
                 ""

@@ -53,6 +53,7 @@ function AddProducts() {
               type="text"
               name="productName"
               onChange={(e) => setProductName(e.target.value)}
+              value={productName}
             />
           </div>
           <div className="cols-span-12 mb-3">
@@ -64,6 +65,7 @@ function AddProducts() {
               type="text"
               name="price"
               onChange={(e) => setPrice(e.target.value)}
+              value={price}
             />
           </div>
         </div>

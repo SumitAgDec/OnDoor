@@ -16,6 +16,8 @@ import Signup from "./components/Signup/Signup.jsx";
 import Login from "./components/Login/login.jsx";
 import Profile from "./components/Profile/Profile.jsx";
 import Categories from "./components/Categories/Categories.jsx";
+import ProductQuery from "./components/productQuery/ProductQuery.jsx";
+import AllQuarries from "./components/AllQuarries/AllQuarries .jsx";
 
 // Define your routes
 const router = createBrowserRouter(
@@ -29,13 +31,15 @@ const router = createBrowserRouter(
       <Route path="add-products" element={<AddProducts />} />
       <Route path="view-products" element={<ViewProduct />} />
       <Route path="orders" element={<Orders />} />
+      <Route path="product-query" element={<ProductQuery />} />
+      <Route path="all-quarries" element={<AllQuarries />} />
     </Route>
   )
 );
 
 // Wrap RouterProvider with ProductProvider
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
+  // <StrictMode>
+  <RouterProvider router={router} />
+  // </StrictMode>
 );

@@ -7,6 +7,7 @@ const path = require('path')
 const productRoute = require('./routes/product.router')
 const paymentRoute = require('./routes/payments.router')
 const userRoute = require('./routes/user.router')
+const queryRoute = require('./routes/query.router')
 
 const app = express()
 // app.use(express.static(path.join(__dirname, 'public')))
@@ -27,6 +28,7 @@ app.use("/userProfile", express.static(path.join(__dirname, "public/userProfile"
 app.use('/api', productRoute)
 app.use('/', paymentRoute)
 app.use('/auth', userRoute)
+app.use('/query', queryRoute)
 
 
 app.listen(port, () => console.log(`http://localhost:${port}`))
