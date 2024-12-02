@@ -13,7 +13,6 @@ function Orders() {
     const getData = async () => {
       try {
         const response = await axios.get("/api/orders");
-        console.log("Response structure:", response.data);
         setOrders(response.data);
       } catch (error) {
         console.error("Error fetching orders:", error);
