@@ -38,10 +38,7 @@ const paymentVerification = async (req, res) => {
             razorpay_payment_id,
             razorpay_signature,
         })
-        return res.status(200).json({
-            success: true,
-            message: 'Verify Payment'
-        })
+        return res.status(200).redirect('http://localhost:5173/categories')
     }
     else {
         return res.status(400).json({
