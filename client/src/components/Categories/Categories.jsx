@@ -50,6 +50,7 @@ function Categories() {
               {searchItem.map((item) => (
                 <Card
                   key={item._id}
+                  productId={item._id}
                   productName={item.productName}
                   price={item.price}
                   productImage={item.productImage}
@@ -72,6 +73,7 @@ function Categories() {
               .map((item) => (
                 <Card
                   key={item._id}
+                  productId={item._id}
                   productName={item.productName}
                   price={item.price}
                   productImage={item.productImage}
@@ -90,6 +92,7 @@ function Categories() {
               .map((item) => (
                 <Card
                   key={item._id}
+                  productId={item._id}
                   productName={item.productName}
                   price={item.price}
                   productImage={item.productImage}
@@ -108,6 +111,7 @@ function Categories() {
               .map((item) => (
                 <Card
                   key={item._id}
+                  productId={item._id}
                   productName={item.productName}
                   price={item.price}
                   productImage={item.productImage}
@@ -125,6 +129,7 @@ function Categories() {
               .filter((item) => item.productType === "grocery")
               .map((item) => (
                 <Card
+                  productId={item._id}
                   key={item._id}
                   productName={item.productName}
                   price={item.price}

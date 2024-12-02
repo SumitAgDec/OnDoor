@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { addProducts, getProduct } = require('../controllers/products.controller')
+const { addProducts, getProduct, viewProduct } = require('../controllers/products.controller')
 const multer = require('multer')
 const path = require('path')
 
@@ -18,5 +18,6 @@ const router = Router()
 
 router.post('/add-products', upload.single('productImage'), addProducts)
 router.get('/get-products', getProduct)
+router.get('/view-products/:id', viewProduct)
 
 module.exports = router

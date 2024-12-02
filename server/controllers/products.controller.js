@@ -33,6 +33,11 @@ const addProducts = async (req, res) => {
     })
 }
 
+const viewProduct = async (req, res) => {
+    const product = await Product.findOne({ _id: req.params.id })
+    return res.send(product)
+}
+
 const getProduct = async (req, res) => {
     const data = await Product.find({})
     return res.status(200).send(data)
@@ -40,5 +45,6 @@ const getProduct = async (req, res) => {
 
 module.exports = {
     addProducts,
-    getProduct
+    getProduct,
+    viewProduct
 }

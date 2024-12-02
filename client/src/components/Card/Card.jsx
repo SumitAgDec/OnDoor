@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Card({
@@ -7,7 +7,23 @@ function Card({
   productImage,
   productType = "Not Defined",
   productDescription,
+  productId,
 }) {
+  const [currentProductId, setCurrentProductId] = useState("");
+  // const handleClick = () => {
+
+  //   console.log(productId);
+
+  // };
+  const handleClick = () => {
+    console.log("Product ID:", productId); // Log the correct productId when clicked
+  };
+
+  useEffect(() => {
+    setCurrentProductId(productId);
+    console.log(currentProductId);
+  }, [handleClick]);
+
   return (
     <div>
       <div className="our_solution_category">
@@ -25,13 +41,10 @@ function Card({
               <p>Rs {price}</p>
               <button type="button" className="read_more_btn">
                 <Link
-                  to="/view-products"
+                  to={`/view-products/${currentProductId}`}
+                  onClick={handleClick}
                   state={{
-                    productName,
-                    price,
-                    productImage,
-                    productType,
-                    productDescription,
+                    currentProductId,
                   }}
                 >
                   View Product

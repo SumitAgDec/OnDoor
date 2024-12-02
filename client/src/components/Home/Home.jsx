@@ -83,6 +83,7 @@ function Home() {
             {products.slice(0, 3).map((item) => (
               <Card
                 key={item._id}
+                productId={item._id}
                 productName={item.productName}
                 price={item.price}
                 productImage={item.productImage}

@@ -29,7 +29,7 @@ const router = createBrowserRouter(
       <Route path="profile" element={<Profile />} />
       <Route path="categories" element={<Categories />} />
       <Route path="add-products" element={<AddProducts />} />
-      <Route path="view-products" element={<ViewProduct />} />
+      <Route path="view-products/:id" element={<ViewProduct />} />
       <Route path="orders" element={<Orders />} />
       <Route path="product-query" element={<ProductQuery />} />
       <Route path="all-quarries" element={<AllQuarries />} />

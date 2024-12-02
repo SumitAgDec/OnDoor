@@ -5,16 +5,21 @@ function ViewProduct() {
   const location = useLocation();
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [userData, setUserData] = useState("");
 
-  const {
-    productName,
-    price,
-    productImage,
-    productType = "Not Defined",
-    productDescription,
-  } = location.state || {};
+  const { currentProductId } = location.state || {};
 
   useEffect(() => {
+    const getUserData = async () => {
+      console.log(currentProductId);
+      const response = await axios.get(
+        `/api/view-products/${currentProductId}`
+      );
+      const data = response.data;
+      setUserData(data);
+      console.log(userData);
+    };
+    getUserData();
     const getData = JSON.parse(localStorage.getItem("user"));
     const name = getData.fullName;
     const email = getData.email;
@@ -35,7 +40,7 @@ function ViewProduct() {
       key,
       amount: order.amount,
       currency: "INR",
-      name: "Sumit verma",
+      name: "OnDoor",
       description: "Tutorial of RazorPay",
       image:
         "https://avatars.githubusercontent.com/u/162549367?s=400&u=7cfb9538802f05c1846154247eebb9b4aa87adba&v=4",
@@ -62,24 +67,24 @@ function ViewProduct() {
     <div className="grid grid-cols-1 md:grid-cols-2 my-16">
       <div>
         <img
-          src={`http://localhost:5001${productImage}`}
+          src={`http://localhost:5001${userData.productImage}`}
           style={{ width: "300px!important" }}
           alt=""
         />
       </div>
       <div className="flex gap-2 flex-col">
         <div className="flex gap-2 items-end w-full">
-          <h3 className="text-4xl font-bold">{productName}</h3>
-          <p className="text-xl">({productType})</p>
+          <h3 className="text-4xl font-bold">{userData.productName}</h3>
+          <p className="text-xl">({userData.productType})</p>
         </div>
         <div className="flex gap-1">
           <p>₹</p>
-          <p className="text-2xl">{price}</p>
+          <p className="text-2xl">{userData.price}</p>
         </div>
-        {productDescription}
+        {userData.productDescription}
         <div className="d-flex gap-4">
           <button
-            onClick={() => handlePayment(price)}
+            onClick={() => handlePayment(userData.price)}
             type="button"
             className="btn btn-primary"
           >
