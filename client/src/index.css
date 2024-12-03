@@ -12,7 +12,7 @@
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 20% center; /* Change '20%' for a stronger rightward shift */
+  background-position: 20% center;
 }
 
 .our_solution_category {
@@ -197,4 +197,44 @@
 
 .animate-fade-in {
   animation: fadeIn 1.5s ease-in-out;
+}
+
+
+
+/************************* Login **************************/
+
+.login-section{
+  background-image: url("../../public/login.jpg");
+  height: calc(100vh - 60px);
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 20% center;
+}
+
+.login-form{
+  background-color: #ffffff75;
+  padding: 1rem;
+  margin-left: 5rem;
+  border-radius: 1rem;
+}
+
+.signup-section{
+  background-image: url("../../public/signup.jpg");
+  height: calc(100vh - 60px);
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 20% center;
+}
+
+.signup-form {
+  background-color: #ffffff75;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+
+.Orders-list{
+  border: 2px solid #98a7ec;
 }

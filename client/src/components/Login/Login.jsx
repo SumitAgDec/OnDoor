@@ -32,38 +32,44 @@ function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center">
-      <form>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email address
-          </label>
-          <input
-            type="email"
-            name="email"
-            className="form-control"
-            id="email"
-            placeholder="Enter your email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
-          <input
-            type="text"
-            name="password"
-            className="form-control"
-            id="password"
-            placeholder="Enter your password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button onClick={handleLogin} type="submit" className="btn btn-primary">
-          Login
-        </button>
-      </form>
+    <div className="login-section">
+      <div className="flex items-center justify-start h-full">
+        <form className="login-form">
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">
+              Email address
+            </label>
+            <input
+              type="email"
+              name="email"
+              className="form-control"
+              id="email"
+              placeholder="Enter your email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="text"
+              name="password"
+              className="form-control"
+              id="password"
+              placeholder="Enter your password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button
+            onClick={handleLogin}
+            type="submit"
+            className="btn btn-primary bg-customBlue border-none hover:bg-lightCustomBlue"
+          >
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

@@ -33,16 +33,18 @@ function Categories() {
     <>
       <div className="my-6 px-44">
         <input
-          className="form-control"
+          className="form-control bg-bgCustomBlue rounded-full placeholder-white"
           type="text"
           name="productName"
-          placeholder="Search..."
+          placeholder="Search Item..."
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
       {searchItem ? (
         <>
-          <div className="w-full px-44">
+          <div
+            className={`w-full px-44 ${searchItem.length > 0 ? "" : "hidden"}`}
+          >
             <h1 className={`text-3xl ${searchItem.length > 0 ? "" : "hidden"}`}>
               Search Item
             </h1>

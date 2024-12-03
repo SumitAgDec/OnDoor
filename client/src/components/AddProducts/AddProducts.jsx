@@ -36,8 +36,8 @@ function AddProducts() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-full p-5 gap-7">
-      <h1 className="text-3xl text-bold underline">Add Products</h1>
+    <div className="flex flex-col justify-center h-screen w-full p-5 gap-7 bg-veryLightCustomBlue">
+      <h1 className="text-3xl font-bold text-gray-500">Add Products</h1>
       <form
         className="w-full"
         onSubmit={handleSubmit}
@@ -113,7 +113,10 @@ function AddProducts() {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button
+          type="submit"
+          className="btn btn-primary bg-customBlue border-none hover:bg-lightCustomBlue"
+        >
           Submit
         </button>
       </form>

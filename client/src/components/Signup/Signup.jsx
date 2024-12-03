@@ -38,66 +38,68 @@ function Signup() {
   };
 
   return (
-    <div className="flex items-center justify-center">
-      <form enctype="multipart/form-data">
-        <div className="mb-3">
-          <label htmlFor="price" className="form-label">
-            Profile (optional)
-          </label>
-          <input
-            className="form-control"
-            type="file"
-            name="productImage"
-            onChange={(e) => setuserProfile(e.target.files[0])}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="fullName" className="form-label">
-            Full Name
-          </label>
-          <input
-            type="text"
-            name="fullName"
-            className="form-control"
-            id="fullName"
-            placeholder="Enter your Full Name"
-            onChange={(e) => setFullName(e.target.value)}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email address
-          </label>
-          <input
-            type="email"
-            name="email"
-            className="form-control"
-            id="email"
-            placeholder="Enter your email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
-          <input
-            type="text"
-            name="password"
-            className="form-control"
-            id="password"
-            placeholder="Enter your password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button
-          onClick={handleSignup}
-          type="submit"
-          className="btn btn-primary"
-        >
-          Signup
-        </button>
-      </form>
+    <div className="signup-section">
+      <div className="flex items-center justify-end h-full lg:me-11">
+        <form className="signup-form" enctype="multipart/form-data">
+          <div className="mb-3">
+            <label htmlFor="price" className="form-label">
+              Profile (optional)
+            </label>
+            <input
+              className="form-control"
+              type="file"
+              name="productImage"
+              onChange={(e) => setuserProfile(e.target.files[0])}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="fullName" className="form-label">
+              Full Name
+            </label>
+            <input
+              type="text"
+              name="fullName"
+              className="form-control"
+              id="fullName"
+              placeholder="Enter your Full Name"
+              onChange={(e) => setFullName(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">
+              Email address
+            </label>
+            <input
+              type="email"
+              name="email"
+              className="form-control"
+              id="email"
+              placeholder="Enter your email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="text"
+              name="password"
+              className="form-control"
+              id="password"
+              placeholder="Enter your password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button
+            onClick={handleSignup}
+            type="submit"
+            className="btn btn-primary bg-customBlue border-none hover:bg-lightCustomBlue"
+          >
+            Signup
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

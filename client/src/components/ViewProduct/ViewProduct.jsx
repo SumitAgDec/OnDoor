@@ -64,32 +64,36 @@ function ViewProduct() {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 my-16">
-      <div>
-        <img
-          src={`http://localhost:5001${userData.productImage}`}
-          style={{ width: "300px!important" }}
-          alt=""
-        />
-      </div>
-      <div className="flex gap-2 flex-col">
-        <div className="flex gap-2 items-end w-full">
-          <h3 className="text-4xl font-bold">{userData.productName}</h3>
-          <p className="text-xl">({userData.productType})</p>
+    <div className="p-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+        <div>
+          <img
+            src={`http://localhost:5001${userData.productImage}`}
+            style={{ width: "300px!important" }}
+            alt=""
+          />
         </div>
-        <div className="flex gap-1">
-          <p>₹</p>
-          <p className="text-2xl">{userData.price}</p>
-        </div>
-        {userData.productDescription}
-        <div className="d-flex gap-4">
-          <button
-            onClick={() => handlePayment(userData.price)}
-            type="button"
-            className="btn btn-primary"
-          >
-            Buy Now
-          </button>
+        <div className="flex gap-2 flex-col">
+          <div className="flex gap-2 items-end w-full">
+            <h3 className="text-4xl font-bold">{userData.productName}</h3>
+            <p className="text-xl">({userData.productType})</p>
+          </div>
+
+          <p>{userData.productDescription}</p>
+
+          <div className="flex gap-1">
+            <p>₹</p>
+            <p className="text-2xl">{userData.price}</p>
+          </div>
+          <div className="d-flex gap-4">
+            <button
+              onClick={() => handlePayment(userData.price)}
+              type="button"
+              className="btn btn-primary bg-customBlue border-none hover:bg-lightCustomBlue"
+            >
+              Buy Now
+            </button>
+          </div>
         </div>
       </div>
     </div>

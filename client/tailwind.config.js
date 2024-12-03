@@ -8,10 +8,12 @@ export default {
     extend: {
       colors: {
         customBlue: '#7b8dd3',
-        lightCustomBlue: '#98a7ec', // Fixed typo in the key name
+        lightCustomBlue: '#98a7ec',
+        bgCustomBlue: '#98a7ec',
+        veryLightCustomBlue: '#eaf0fc',
       },
       animation: {
-        'fade-in': 'fadeIn 1.5s ease-in-out', // Custom fade-in animation
+        'fade-in': 'fadeIn 1.5s ease-in-out',
       },
       keyframes: {
         fadeIn: {
