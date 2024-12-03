@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Carousel from "./Carousel";
 import axios from "axios";
 import Card from "../Card/Card";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -20,7 +21,24 @@ function Home() {
 
   return (
     <div>
-      <Carousel />
+      <div className="hero-section h-screen">
+        <div class="relative flex items-center justify-center h-[calc(100vh-71px)] bg-gradient-to-b text-center">
+          <div class="absolute top-1/2 transform -translate-y-1/2 w-100 ">
+            <h1 class="text-5xl font-extrabold text-customBlue animate-bounce">
+              Welcome to On<span className="text-gray-500">Door!</span>
+            </h1>
+            <p class="mt-4 text-lg text-gray-700 font-semibold">
+              Your one-stop shop for everything you need. Fast delivery,
+              exclusive offers, and more!
+            </p>
+            <Link to="/categories">
+              <button class="mt-6 px-6 py-3 bg-customBlue text-white rounded-lg shadow-lg hover:bg-lightCustomBlue focus:ring-4 focus:ring-blue-300 transition-all">
+                Start Shopping
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
       <div className="w-full px-44 mb-6 mt-8">
         <div className="container mx-auto px-4 space-y-16">
           {/* Our Vision Section */}
@@ -41,7 +59,7 @@ function Home() {
             </div>
             <div className="md:w-1/2">
               <img
-                src="../../public/our-vision.jpg"
+                src="../../about-us-1.jpg"
                 height={"400px"}
                 alt="Our Vision"
                 className="rounded-lg shadow-md"
@@ -53,7 +71,7 @@ function Home() {
           <section className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
               <img
-                src="../../public/about-us-1.jpg"
+                src="../../our-vision.jpg"
                 alt="About Us"
                 className="rounded-lg shadow-md"
               />

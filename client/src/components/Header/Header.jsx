@@ -37,11 +37,9 @@ function Header() {
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link to="/" className="flex items-center">
-            <img
-              src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-              className="mr-3 h-12"
-              alt="Logo"
-            />
+            <h1 className="text-2xl font-bold text-gray-500">
+              <span className="text-customBlue">On</span>Door
+            </h1>
           </Link>
           <div className="flex items-center lg:order-2">
             {userData ? (
@@ -94,7 +92,7 @@ function Header() {
                 </Link>
                 <Link
                   to="/signup"
-                  className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+                  className="text-white bg-customBlue hover:bg-ligntCustomBlue focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
                 >
                   Signup
                 </Link>
@@ -111,8 +109,8 @@ function Header() {
                   to="/"
                   className={({ isActive }) =>
                     `block ${
-                      isActive ? "text-orange-700" : "text-gray-700"
-                    } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                      isActive ? "text-customBlue" : "text-gray-700"
+                    } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-customBlue lg:p-0`
                   }
                 >
                   Home
@@ -124,8 +122,8 @@ function Header() {
                   to="/categories"
                   className={({ isActive }) =>
                     `block ${
-                      isActive ? "text-orange-700" : "text-gray-700"
-                    } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                      isActive ? "text-customBlue" : "text-gray-700"
+                    } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-customBlue lg:p-0`
                   }
                 >
                   All Categories
@@ -141,8 +139,8 @@ function Header() {
                           to="/add-products"
                           className={({ isActive }) =>
                             `block ${
-                              isActive ? "text-orange-700" : "text-gray-700"
-                            } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                              isActive ? "text-customBlue" : "text-gray-700"
+                            } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-customBlue lg:p-0`
                           }
                         >
                           Add Products
@@ -154,8 +152,8 @@ function Header() {
                           to="/orders"
                           className={({ isActive }) =>
                             `block ${
-                              isActive ? "text-orange-700" : "text-gray-700"
-                            } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                              isActive ? "text-customBlue" : "text-gray-700"
+                            } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-customBlue lg:p-0`
                           }
                         >
                           Orders
@@ -167,8 +165,8 @@ function Header() {
                           to="/all-quarries"
                           className={({ isActive }) =>
                             `block ${
-                              isActive ? "text-orange-700" : "text-gray-700"
-                            } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                              isActive ? "text-customBlue" : "text-gray-700"
+                            } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-customBlue lg:p-0`
                           }
                         >
                           All Quarries
@@ -181,8 +179,8 @@ function Header() {
                         to="/product-query"
                         className={({ isActive }) =>
                           `block ${
-                            isActive ? "text-orange-700" : "text-gray-700"
-                          } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                            isActive ? "text-customBlue" : "text-gray-700"
+                          } py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-customBlue lg:p-0`
                         }
                       >
                         Product Query
