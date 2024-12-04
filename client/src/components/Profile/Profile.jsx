@@ -25,7 +25,7 @@ function Profile() {
         </div>
 
         <div className="md:w-2/3 md:text-left">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-6 underline">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-500 mb-6 ">
             Profile Information
           </h1>
           <div className="space-y-4 text-gray-700">
@@ -42,9 +42,6 @@ function Profile() {
               <span className="md:w-2/3">{userType}</span>
             </div>
           </div>
-          <button className="mt-6 px-6 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition">
-            Edit Profile
-          </button>
         </div>
       </div>
     </div>
