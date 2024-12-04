@@ -39,13 +39,15 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full px-44 mb-6 mt-8">
+      <div className="w-full px-4 sm:px-8 lg:px-44 mb-6 mt-8">
         <div className="container mx-auto px-4 space-y-16">
           {/* Our Vision Section */}
-          <section className="flex flex-col md:flex-row items-center gap-8">
-            <div className="md:w-1/2 space-y-4">
-              <h2 className="text-3xl font-bold text-gray-800">About Us</h2>
-              <p className="text-gray-600">
+          <section className="flex flex-col lg:flex-row items-center gap-8">
+            <div className="w-full lg:w-1/2 space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+                About Us
+              </h2>
+              <p className="text-gray-600 text-sm md:text-base">
                 Welcome to our e-commerce platform, where quality meets
                 convenience. Our mission is to provide a seamless online
                 shopping experience for customers looking for a diverse range of
@@ -57,29 +59,30 @@ function Home() {
                 to be your trusted partner in all your shopping needs.
               </p>
             </div>
-            <div className="md:w-1/2">
+            <div className="w-full lg:w-1/2">
               <img
                 src="../../about-us-1.jpg"
-                height={"400px"}
                 alt="Our Vision"
-                className="rounded-lg shadow-md"
+                className="w-full h-auto max-h-[400px] rounded-lg shadow-md object-cover"
               />
             </div>
           </section>
 
           {/* About Us Section */}
-          <section className="flex flex-col md:flex-row items-center gap-8">
-            <div className="md:w-1/2">
+          <section className="flex flex-col lg:flex-row items-center gap-8">
+            <div className="w-full lg:w-1/2">
               <img
                 src="../../our-vision.jpg"
                 alt="About Us"
-                className="rounded-lg shadow-md"
+                className="w-full h-auto max-h-[400px] rounded-lg shadow-md object-cover"
               />
             </div>
 
-            <div className="md:w-1/2 space-y-4">
-              <h2 className="text-3xl font-bold text-gray-800">Our Vision</h2>
-              <p className="text-gray-600">
+            <div className="w-full lg:w-1/2 space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+                Our Vision
+              </h2>
+              <p className="text-gray-600 text-sm md:text-base">
                 At our core, we believe in revolutionizing the way people shop.
                 Our vision is to create a sustainable e-commerce ecosystem where
                 both customers and sellers thrive. By leveraging advanced
@@ -94,10 +97,10 @@ function Home() {
         </div>
 
         <div className="pb-12 pt-20">
-          <h1 className="text-3xl font-bold text-gray-800 mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8">
             Latest Added
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {products.slice(0, 3).map((item) => (
               <Card
                 key={item._id}

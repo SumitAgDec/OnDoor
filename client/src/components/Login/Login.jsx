@@ -33,7 +33,7 @@ function Login() {
 
   return (
     <div className="login-section">
-      <div className="flex items-center justify-start h-full">
+      <div className="login-section min-h-screen flex items-center justify-center md:justify-start px-4">
         <form className="login-form">
           <div className="mb-3">
             <label htmlFor="email" className="form-label">

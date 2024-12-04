@@ -36,14 +36,14 @@ function AddProducts() {
   };
 
   return (
-    <div className="flex flex-col justify-center h-screen w-full p-5 gap-7 bg-veryLightCustomBlue">
+    <div className="flex flex-col justify-center w-full p-5 gap-7 bg-veryLightCustomBlue">
       <h1 className="text-3xl font-bold text-gray-500">Add Products</h1>
       <form
         className="w-full"
         onSubmit={handleSubmit}
         enctype="multipart/form-data"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-0">
           <div className="mb-3">
             <label htmlFor="productName" className="form-label">
               Product Name
@@ -69,7 +69,7 @@ function AddProducts() {
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-0">
           <div className="mb-3">
             <label htmlFor="price" className="form-label">
               Product Image

@@ -36,7 +36,7 @@ function ProductQuery() {
     <div className="flex flex-col  w-full px-5 py-4 gap-4 bg-veryLightCustomBlue">
       <h1 className="text-3xl font-bold text-gray-500">Add Query</h1>
       <form onSubmit={handelSubmit} className="w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-0">
           <div className="mb-3">
             <label htmlFor="fullName" className="form-label">
               Full Name
@@ -62,7 +62,7 @@ function ProductQuery() {
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-0">
           <div className="mb-3">
             <label htmlFor="phoneNumber" className="form-label">
               Phone Number

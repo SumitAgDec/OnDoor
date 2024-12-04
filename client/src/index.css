@@ -7,7 +7,7 @@
 }
 
 .hero-section {
-  background-image: url("../../public/banner.jpg");
+  background-image: url("../../banner.jpg");
   height: calc(100vh - 60px);
   width: 100%;
   background-size: cover;
@@ -199,12 +199,10 @@
   animation: fadeIn 1.5s ease-in-out;
 }
 
-
-
 /************************* Login **************************/
 
-.login-section{
-  background-image: url("../../public/login.jpg");
+.login-section {
+  background-image: url("../../login.jpg");
   height: calc(100vh - 60px);
   width: 100%;
   background-size: cover;
@@ -212,15 +210,14 @@
   background-position: 20% center;
 }
 
-.login-form{
+.login-form {
   background-color: #ffffff75;
   padding: 1rem;
-  margin-left: 5rem;
   border-radius: 1rem;
 }
 
-.signup-section{
-  background-image: url("../../public/signup.jpg");
+.signup-section {
+  background-image: url("../../signup.jpg");
   height: calc(100vh - 60px);
   width: 100%;
   background-size: cover;
@@ -234,7 +231,6 @@
   border-radius: 1rem;
 }
 
-
-.Orders-list{
+.Orders-list {
   border: 2px solid #98a7ec;
 }

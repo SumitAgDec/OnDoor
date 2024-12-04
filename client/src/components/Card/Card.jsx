@@ -21,7 +21,6 @@ function Card({
 
   useEffect(() => {
     setCurrentProductId(productId);
-    console.log(currentProductId);
   }, [handleClick]);
 
   return (

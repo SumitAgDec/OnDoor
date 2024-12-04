@@ -39,7 +39,7 @@ function Signup() {
 
   return (
     <div className="signup-section">
-      <div className="flex items-center justify-end h-full lg:me-11">
+      <div className="flex items-center justify-center md:justify-end h-full md:me-11">
         <form className="signup-form" enctype="multipart/form-data">
           <div className="mb-3">
             <label htmlFor="price" className="form-label">

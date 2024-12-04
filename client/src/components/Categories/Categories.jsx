@@ -31,9 +31,9 @@ function Categories() {
   }, []);
   return (
     <>
-      <div className="my-6 px-44">
+      <div className="my-6 px-4 sm:px-8 lg:px-20 xl:px-44">
         <input
-          className="form-control bg-bgCustomBlue rounded-full placeholder-white"
+          className="form-control w-full bg-bgCustomBlue rounded-full placeholder-white text-sm md:text-base px-4 py-2 focus:outline-none"
           type="text"
           name="productName"
           placeholder="Search Item..."
@@ -41,35 +41,40 @@ function Categories() {
         />
       </div>
       {searchItem ? (
-        <>
-          <div
-            className={`w-full px-44 ${searchItem.length > 0 ? "" : "hidden"}`}
+        <div
+          className={`w-full px-4 sm:px-8 lg:px-20 xl:px-44 ${
+            searchItem.length > 0 ? "" : "hidden"
+          }`}
+        >
+          <h1
+            className={`text-2xl md:text-3xl font-bold mb-4 ${
+              searchItem.length > 0 ? "" : "hidden"
+            }`}
           >
-            <h1 className={`text-3xl ${searchItem.length > 0 ? "" : "hidden"}`}>
-              Search Item
-            </h1>
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  py-3">
-              {searchItem.map((item) => (
-                <Card
-                  key={item._id}
-                  productId={item._id}
-                  productName={item.productName}
-                  price={item.price}
-                  productImage={item.productImage}
-                  productType={item.productType}
-                  productDescription={item.productDescription}
-                />
-              ))}
-            </div>
+            Search Item
+          </h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 py-3">
+            {searchItem.map((item) => (
+              <Card
+                key={item._id}
+                productId={item._id}
+                productName={item.productName}
+                price={item.price}
+                productImage={item.productImage}
+                productType={item.productType}
+                productDescription={item.productDescription}
+              />
+            ))}
           </div>
-        </>
+        </div>
       ) : (
         ""
       )}
+
       <div>
-        <div className="w-full px-44">
-          <h1 className="text-3xl ">Electornics</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  py-3">
+        <div className="w-full px-4 sm:px-8 lg:px-20 xl:px-44">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4">Electronics</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 py-3">
             {products
               .filter((item) => item.productType === "electronics")
               .map((item) => (
@@ -86,9 +91,9 @@ function Categories() {
           </div>
         </div>
 
-        <div className="w-full px-44">
-          <h1 className="text-3xl ">Furniture</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  py-3">
+        <div className="w-full px-4 sm:px-8 lg:px-20 xl:px-44">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4">Furniture</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 py-3">
             {products
               .filter((item) => item.productType === "furniture")
               .map((item) => (
@@ -105,9 +110,9 @@ function Categories() {
           </div>
         </div>
 
-        <div className="w-full px-44">
-          <h1 className="text-3xl ">Clothing</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  py-3">
+        <div className="w-full px-4 sm:px-8 lg:px-20 xl:px-44">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4">Clothing</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 py-3">
             {products
               .filter((item) => item.productType === "clothing")
               .map((item) => (
@@ -124,15 +129,15 @@ function Categories() {
           </div>
         </div>
 
-        <div className="w-full px-44">
-          <h1 className="text-3xl ">Grocery</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  py-3">
+        <div className="w-full px-4 sm:px-8 lg:px-20 xl:px-44">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4">Grocery</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 py-3">
             {products
               .filter((item) => item.productType === "grocery")
               .map((item) => (
                 <Card
-                  productId={item._id}
                   key={item._id}
+                  productId={item._id}
                   productName={item.productName}
                   price={item.price}
                   productImage={item.productImage}
